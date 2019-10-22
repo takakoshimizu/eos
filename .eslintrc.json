@@ -15,7 +15,7 @@
 			"modules": true,
 			"experimentalObjectRestSpread": true
 		},
-		"project": "./tsconfig.json"
+		"project": "tsconfig.json"
 	},
 	"plugins": ["react", "jest", "@typescript-eslint"],
 	"settings": {

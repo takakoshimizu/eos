@@ -1,11 +1,6 @@
-type Store = {
-	blocks: BlockStore;
-};
-
+type Block = import('eosjs/dist/eosjs-rpc-interfaces').GetBlockResult;
 type BlockStore = Block[];
 
-type Block = {
-	id: string;
-	previous: string;
-	// more to come
+type Store = {
+	blocks: BlockStore;
 };

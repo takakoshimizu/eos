@@ -1,9 +1,9 @@
 import { createNamespace } from 'redux-actions-namespace';
 import { getBlocks, getLastIrreversableBlockId } from './api';
-const { createAction } = createNamespace('EOSIO:BLOCK');
+const { createAction } = createNamespace('EOSIO:BLOCK:');
 
 export const details = createAction('DETAILS');
-export const get = createAction('GET', async (payload: number) => {
+export const get = createAction('GET', async (payload: number = 5) => {
 	const blockId = await getLastIrreversableBlockId();
 	return getBlocks(blockId, payload);
 });

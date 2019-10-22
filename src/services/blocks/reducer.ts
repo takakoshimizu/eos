@@ -8,4 +8,4 @@ export default handleActions({
 		_,
 		{ payload }: ReduxActions.Action<BlockStore>
 	): BlockStore => payload
-}, []);
+}, INITIAL_STATE);
