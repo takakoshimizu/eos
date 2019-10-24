@@ -25,6 +25,16 @@ const $Block = styled.li`
 	&:hover {
 		box-shadow: ${shadow('z2')};
 	}
+
+	button {
+		margin-top: 1em;
+	}
+`;
+
+const $Raw = styled.pre`
+	max-width: 100%;
+	max-height: 50vh;
+	overflow: auto;
 `;
 
 type Props = {
@@ -43,7 +53,7 @@ export const Block: FunctionComponent<Props> = ({ block }) => {
 			<button onClick={() => setOpen(!isOpen)}>{'Toggle details'}</button>
 
 			{isOpen && (
-				<pre>{JSON.stringify(block, null, 2)}</pre>
+				<$Raw>{JSON.stringify(block, null, 2)}</$Raw>
 			)}
 		</$Block>
 	);

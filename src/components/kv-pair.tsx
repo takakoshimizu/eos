@@ -6,6 +6,10 @@ const $KvPair = styled.div.attrs({
 })`
 	display: flex;
 	font-size: 1.2rem;
+
+	div {
+		padding: .25em;
+	}
 `;
 
 const $Key = styled.div`

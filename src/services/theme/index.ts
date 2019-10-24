@@ -7,7 +7,7 @@ export const theme: Theme = {
 	},
 	dark: {
 		neutral: '#595f64',
-		card: '#b2b2b3',
+		card: '#1a242d',
 		text: '#fafafa',
 		accent: '#205478'
 	},
