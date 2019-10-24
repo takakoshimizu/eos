@@ -9,7 +9,10 @@
 		"jsx": "react",
 		"baseUrl": ".",
 		"noImplicitAny": true,
-		"allowSyntheticDefaultImports": true
+		"allowSyntheticDefaultImports": true,
+		"paths": {
+			"react-dom": ["./node_modules/@hot-loader/react-dom"]
+		}
 	},
 	"include": ["src"],
 	"exclude": ["src/**/*.test.ts", "src/**/*.test.tsx"]

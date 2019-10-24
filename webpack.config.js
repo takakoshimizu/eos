@@ -11,14 +11,17 @@ function root() {
 }
 
 module.exports = {
-	entry: ['./src/index.tsx'],
+	entry: ['react-hot-loader/patch', './src/index.tsx'],
 	devtool: isWebpackDevServer() && '#cheap-module-source-map',
 	output: {
 		path: root('dist'),
 		filename: '[name].js'
 	},
 	resolve: {
-		extensions: ['.ts', '.tsx', '.js']
+		extensions: ['.ts', '.tsx', '.js'],
+		alias: {
+			'react-dom': '@hot-loader/react-dom'
+		}
 	},
 	optimization: {
 		splitChunks: {
@@ -51,7 +54,22 @@ module.exports = {
 				exclude: /node_modules/,
 				use: [
 					{
-						loader: 'ts-loader'
+						loader: 'babel-loader',
+						options: {
+							cacheDirectory: true,
+							babelrc: false,
+							presets: [
+								[
+									'@babel/preset-env',
+									{ targets: { browsers: 'last 2 versions'} }
+								],
+								'@babel/preset-typescript',
+								'@babel/preset-react'
+							],
+							plugins: [
+              	'react-hot-loader/babel'
+							]
+						}
 					}
 				]
 			}

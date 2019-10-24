@@ -1,4 +1,5 @@
 import React, { FunctionComponent } from 'react';
+import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
 import { ThemeProvider } from 'styled-components';
 import { theme } from './services/theme';
@@ -8,7 +9,7 @@ import { store } from './store';
 
 import { BlockList } from './scenes/block-list';
 
-export const App: FunctionComponent = () => (
+const App: FunctionComponent = () => (
 	<Provider store={store}>
 		<ThemeProvider theme={theme}>
 			<>
@@ -19,3 +20,5 @@ export const App: FunctionComponent = () => (
 		</ThemeProvider>
 	</Provider>
 );
+
+export default hot(module)(App);
