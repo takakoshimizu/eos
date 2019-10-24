@@ -10,7 +10,10 @@
   "scripts": {
     "start": "webpack-dev-server --hot",
     "test": "jest",
-    "build": "webpack"
+    "build": "webpack",
+    "compile": "lingui compile",
+    "add-locale": "lingui add-locale",
+    "extract": "lingui extract --clean"
   },
   "dependencies": {
     "@babel/polyfill": "^7.6.0",
@@ -24,7 +27,8 @@
     "redux-actions-namespace": "^1.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise": "^0.6.0",
-    "styled-components": "^4.4.0"
+    "styled-components": "^4.4.0",
+    "typescript": "^3.7.0-beta"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -33,6 +37,7 @@
     "@babel/preset-react": "^7.6.3",
     "@babel/preset-typescript": "^7.6.0",
     "@hot-loader/react-dom": "^16.10.2",
+    "@lingui/babel-preset-react": "^2.8.3",
     "@lingui/cli": "^2.8.3",
     "@lingui/macro": "^2.8.3",
     "@types/jest": "^24.0.19",
@@ -46,6 +51,7 @@
     "@typescript-eslint/parser": "^2.4.0",
     "babel-core": "7.0.0-bridge.0",
     "babel-loader": "^8.0.6",
+    "babel-plugin-macros": "^2.6.1",
     "env-cmd": "^10.0.1",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
@@ -57,7 +63,6 @@
     "react-hot-loader": "^4.12.15",
     "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.0",
-    "typescript": "^3.6.4",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",
     "webpack-dev-server": "^3.8.2"

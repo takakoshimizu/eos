@@ -1,0 +1,7 @@
+{
+	"localeDir": "src/lang",
+	"srcPathDirs": ["src"],
+	"compileNamespace": "es",
+	"sourceLocale": "en",
+	"format": "po"
+}

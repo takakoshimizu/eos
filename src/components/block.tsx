@@ -43,13 +43,18 @@ type Props = {
 
 export const Block: FunctionComponent<Props> = ({ block }) => {
 	const [isOpen, setOpen] = useState(false);
+	const actions = block.transactions.reduce((actions, tx) => {
+		if (typeof tx.trx === 'string') return actions;
+		return actions + tx.trx.transaction.actions.length;
+	}, 0);
 	
 	return (
 		<$Block>
 			<KvPair keyName="ID">{block.id}</KvPair>
 			<KvPair keyName="Timestamp">{block.timestamp}</KvPair>
-			<KvPair keyName="Actions">{block.transactions.length.toString()}</KvPair>
-
+			<KvPair keyName="Actions">{actions.toString()}</KvPair>
+			<KvPair keyName="Transactions">{block.transactions.length.toString()}</KvPair>
+			
 			<button onClick={() => setOpen(!isOpen)}>{'Toggle details'}</button>
 
 			{isOpen && (

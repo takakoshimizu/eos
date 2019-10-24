@@ -7,3 +7,5 @@ declare module 'redux-actions-namespace' {
 
 declare module 'redux-devtools-extension';
 declare module 'redux-promise';
+declare module '@lingui/react';
+declare module '@lingui/macro';

@@ -59,3 +59,8 @@ typings/
 
 # next.js build output
 .next
+
+# Lingui
+src/lang/_build
+src/lang/**/messages.js
+src/lang/**/messages.mo
