@@ -1,39 +1,44 @@
 version: 2
 
 workflows:
-	version: 2
-	build:	
-		jobs:
-			- build
-				filters:
-					branches:
-						only: master
+  version: 2
+  build:	
+    jobs:
+      - build
+        filters:
+          branches:
+            only: master
 
 jobs:
-	build:
-		docker:
-			- image: node:12-alpine
-		
-		steps:
-			- checkout
-			- restore_cache:
-        	keys:
-        		- v1-dependencies-{{ checksum "package.json" }}
-          	- v1-dependencies-
-			- run: yarn
-			- run: yarn build
+  build:
+    docker:
+      - image: node:12-alpine
+    
+    steps:
+      - add_ssh_keys:
+        fingerprints:
+          - "2c:8c:29:71:40:17:f9:06:95:7d:dc:17:96:8f:3b:73"
 
-			- save_cache
-					paths:
-						- node_modules
-					key: v1-dependencies-{{ checksum "package.json" }}
+      - checkout
+      - restore_cache:
+          keys:
+            - v1-dependencies-{{ checksum "package.json" }}
+            - v1-dependencies-
+      - run: yarn
+      - run: yarn compile
+      - run: yarn build
 
-			- run: 
-					command: |
-						npm install -g --silent gh-pages
-						git config user.email "ci-build@halcyond.net"
-						git config user.name "ci-build"
+      - save_cache
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
 
-			- run: gh-pages --dist dist
+      - run: 
+          command: |
+            npm install -g --silent gh-pages
+            git config user.email "ci-build@halcyond.net"
+            git config user.name "ci-build"
 
-			
+      - run: gh-pages --dist dist
+
+      

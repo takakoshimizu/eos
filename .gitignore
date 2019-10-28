@@ -64,3 +64,6 @@ typings/
 src/lang/_build
 src/lang/**/messages.js
 src/lang/**/messages.mo
+
+# build
+dist
