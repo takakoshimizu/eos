@@ -7,6 +7,7 @@ import { Button } from './button';
 import { KvPair } from './kv-pair';
 
 import { color, shadow } from '../services/theme';
+import { Transition } from 'react-transition-group';
 
 const $Block = styled.li`
 	padding: 1rem;
@@ -36,11 +37,23 @@ const $Raw = styled.pre`
 	overflow: auto;
 `;
 
-type Props = {
-	block: Block;
+const initialStyle = {
+	transition: 'opacity .3s ease-in-out, transform .3s ease-in-out',
+	opacity: 0,
+	transform: 'translateY(5px)'
 };
 
-export const Block: FunctionComponent<Props> = ({ block }) => {
+const transition = {
+	entering: { opacity: 0, transform: 'translateY(5px)' },
+	entered: { opacity: 1, transform: 'translateY(0)' }
+};
+
+type Props = {
+	block: Block;
+	index: number;
+};
+
+export const Block: FunctionComponent<Props> = ({ block, index }) => {
 	const [isOpen, setOpen] = useState(false);
 	const actions = block.transactions.reduce((actions, tx) => {
 		if (typeof tx.trx === 'string') return actions;
@@ -48,22 +61,31 @@ export const Block: FunctionComponent<Props> = ({ block }) => {
 	}, 0);
 
 	return (
-		<$Block>
-			<I18n>
-				{({ i18n }) => (
-					<>
-						<KvPair keyName={i18n._(t`ID`)}>{block.id}</KvPair>
-						<KvPair keyName={i18n._(t`Timestamp`)}>{block.timestamp}</KvPair>
-						<KvPair keyName={i18n._(t`Actions`)}>{actions.toString()}</KvPair>
-					</>
-				)}
-			</I18n>
-
-			<Button onClick={() => setOpen(!isOpen)}>
-				<Trans>{'Toggle details'}</Trans>
-			</Button>
-
-			{isOpen && <$Raw>{JSON.stringify(block, null, 2)}</$Raw>}
-		</$Block>
+		<Transition in appear timeout={300}>
+			{state => (
+				<$Block style={{
+					...initialStyle,
+					// @ts-ignore
+					...transition[state],
+					transitionDelay: `${index * 100}ms`
+				}}>
+					<I18n>
+						{({ i18n }) => (
+							<>
+								<KvPair keyName={i18n._(t`ID`)}>{block.id}</KvPair>
+								<KvPair keyName={i18n._(t`Timestamp`)}>{block.timestamp}</KvPair>
+								<KvPair keyName={i18n._(t`Actions`)}>{actions.toString()}</KvPair>
+							</>
+						)}
+					</I18n>
+		
+					<Button onClick={() => setOpen(!isOpen)}>
+						<Trans>{'Toggle details'}</Trans>
+					</Button>
+		
+					{isOpen && <$Raw>{JSON.stringify(block, null, 2)}</$Raw>}
+				</$Block>
+			)}
+		</Transition>
 	);
 };

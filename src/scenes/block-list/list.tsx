@@ -15,7 +15,7 @@ export const List = () => {
 
 	return (
 		<$List>
-			{blocks.map(b => <Block key={b.id} block={b} />)}
+			{blocks.map((b, ix) => <Block key={b.id} block={b} index={ix} />)}
 		</$List>
 	);
 };
