@@ -17,12 +17,12 @@ const $Block = styled.li`
 	cursor: default;
 
 	box-shadow: ${shadow('z1')};
-	transition: box-shadow 0.3s ease-in-out;
 
 	background-color: ${color('card')};
 	border-top: 4px solid ${color('accent')};
 
 	&:hover {
+		transform: translateY(-3px) !important;
 		box-shadow: ${shadow('z2')};
 	}
 
@@ -38,7 +38,7 @@ const $Raw = styled.pre`
 `;
 
 const initialStyle = {
-	transition: 'opacity .3s ease-in-out, transform .3s ease-in-out',
+	transition: 'opacity .3s ease-in-out, transform .3s ease-in-out, box-shadow .3s ease-in-out',
 	opacity: 0,
 	transform: 'translateY(5px)'
 };
