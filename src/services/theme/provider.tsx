@@ -16,13 +16,13 @@ export const ColorThemeProvider: FunctionComponent<Props> = ({ children }) => {
 			setColorTheme(darkTheme);
 		}
 
-		mediaMatcher.addEventListener('change', e => {
+		mediaMatcher.onchange = function(e) {
 			if (e.matches) {
 				setColorTheme(darkTheme);
 			} else {
 				setColorTheme(lightTheme);
 			}
-		});
+		};
 	}, []);
 
 	return (
