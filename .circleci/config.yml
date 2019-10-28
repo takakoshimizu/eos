@@ -1,0 +1,39 @@
+version: 2
+
+workflows:
+	version: 2
+	build:	
+		jobs:
+			- build
+				filters:
+					branches:
+						only: master
+
+jobs:
+	build:
+		docker:
+			- image: node:12-alpine
+		
+		steps:
+			- checkout
+			- restore_cache:
+        	keys:
+        		- v1-dependencies-{{ checksum "package.json" }}
+          	- v1-dependencies-
+			- run: yarn
+			- run: yarn build
+
+			- save_cache
+					paths:
+						- node_modules
+					key: v1-dependencies-{{ checksum "package.json" }}
+
+			- run: 
+					command: |
+						npm install -g --silent gh-pages
+						git config user.email "ci-build@halcyond.net"
+						git config user.name "ci-build"
+
+			- run: gh-pages --dist dist
+
+			
