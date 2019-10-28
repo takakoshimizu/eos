@@ -27,6 +27,7 @@
     "redux-actions-namespace": "^1.0.1",
     "redux-devtools-extension": "^2.13.8",
     "redux-promise": "^0.6.0",
+    "shader": "^1.0.0",
     "styled-components": "^4.4.0",
     "typescript": "^3.7.0-beta"
   },
@@ -41,6 +42,8 @@
     "@lingui/cli": "^2.8.3",
     "@lingui/macro": "^2.8.3",
     "@types/jest": "^24.0.19",
+    "@types/lingui__macro": "^2.7.3",
+    "@types/lingui__react": "^2.8.1",
     "@types/react": "^16.9.9",
     "@types/react-dom": "^16.9.2",
     "@types/react-redux": "^7.1.5",

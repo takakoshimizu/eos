@@ -6,12 +6,13 @@ export const GlobalStyle = createGlobalStyle`
 		font-family: ${p => p.theme.font.primary};
 		padding: 1rem 2rem;
 
-		background-color: ${color('light', 'neutral')};
-		color: ${color('light', 'text')};
+		background-color: ${color('neutral')};
+		color: ${color('text')};
+	}
 
-		@media (prefers-color-scheme: dark) {
-			background-color: ${color('dark', 'neutral')};
-			color: ${color('dark', 'text')};
-		}
+	main {
+		max-width: 1180px;
+		margin-left: auto;
+		margin-right: auto;
 	}
 `;

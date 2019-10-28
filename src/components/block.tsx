@@ -1,6 +1,9 @@
 import React, { useState, FunctionComponent } from 'react';
 import styled from 'styled-components';
+import { I18n } from '@lingui/react';
+import { Trans, t } from '@lingui/macro';
 
+import { Button } from './button';
 import { KvPair } from './kv-pair';
 
 import { color, shadow } from '../services/theme';
@@ -15,12 +18,8 @@ const $Block = styled.li`
 	box-shadow: ${shadow('z1')};
 	transition: box-shadow 0.3s ease-in-out;
 
-	background-color: ${color('light', 'card')};
-	border-top: 4px solid ${color('light', 'accent')};
-	@media (prefers-color-scheme: dark) {
-		background-color: ${color('dark', 'card')};
-		border-top-color: ${color('dark', 'accent')};
-	}
+	background-color: ${color('card')};
+	border-top: 4px solid ${color('accent')};
 
 	&:hover {
 		box-shadow: ${shadow('z2')};
@@ -39,7 +38,7 @@ const $Raw = styled.pre`
 
 type Props = {
 	block: Block;
-}
+};
 
 export const Block: FunctionComponent<Props> = ({ block }) => {
 	const [isOpen, setOpen] = useState(false);
@@ -47,19 +46,24 @@ export const Block: FunctionComponent<Props> = ({ block }) => {
 		if (typeof tx.trx === 'string') return actions;
 		return actions + tx.trx.transaction.actions.length;
 	}, 0);
-	
+
 	return (
 		<$Block>
-			<KvPair keyName="ID">{block.id}</KvPair>
-			<KvPair keyName="Timestamp">{block.timestamp}</KvPair>
-			<KvPair keyName="Actions">{actions.toString()}</KvPair>
-			<KvPair keyName="Transactions">{block.transactions.length.toString()}</KvPair>
-			
-			<button onClick={() => setOpen(!isOpen)}>{'Toggle details'}</button>
+			<I18n>
+				{({ i18n }) => (
+					<>
+						<KvPair keyName={i18n._(t`ID`)}>{block.id}</KvPair>
+						<KvPair keyName={i18n._(t`Timestamp`)}>{block.timestamp}</KvPair>
+						<KvPair keyName={i18n._(t`Actions`)}>{actions.toString()}</KvPair>
+					</>
+				)}
+			</I18n>
 
-			{isOpen && (
-				<$Raw>{JSON.stringify(block, null, 2)}</$Raw>
-			)}
+			<Button onClick={() => setOpen(!isOpen)}>
+				<Trans>{'Toggle details'}</Trans>
+			</Button>
+
+			{isOpen && <$Raw>{JSON.stringify(block, null, 2)}</$Raw>}
 		</$Block>
 	);
 };

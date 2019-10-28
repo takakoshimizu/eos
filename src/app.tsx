@@ -1,11 +1,10 @@
 import React, { FunctionComponent } from 'react';
 import { hot } from 'react-hot-loader';
 import { Provider } from 'react-redux';
-import { ThemeProvider } from 'styled-components';
 import { I18nProvider } from '@lingui/react';
-import { Trans } from '@lingui/macro';
 
-import { theme } from './services/theme';
+import { ColorThemeProvider } from './services/theme/provider';
+// @ts-ignore not a TS-able module
 import en from './lang/en/messages';
 
 import { GlobalStyle } from './services/theme/global';
@@ -16,15 +15,12 @@ import { BlockList } from './scenes/block-list';
 const App: FunctionComponent = () => (
 	<Provider store={store}>
 		<I18nProvider catalogs={{ en }} language="en">
-			<ThemeProvider theme={theme}>
+			<ColorThemeProvider>
 				<>
 					<GlobalStyle />
-					<h1>
-						<Trans>{'EOSIO Blockchain Viewer'}</Trans>
-					</h1>
 					<BlockList />
 				</>
-			</ThemeProvider>
+			</ColorThemeProvider>
 		</I18nProvider>
 	</Provider>
 );
