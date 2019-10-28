@@ -14,7 +14,7 @@ export function getBlocks(
 		.then(block => getBlocks(block.previous, count - 1, blocks.concat(block)));
 }
 
-export async function getLastIrreversableBlockId(): Promise<string> {
+export async function getHeadBlock(): Promise<string> {
 	const info = await rpc.get_info();
-	return info.last_irreversible_block_id;
+	return info.head_block_id;
 }

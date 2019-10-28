@@ -1,0 +1,277 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Block list should render 1`] = `
+<Provider
+  store={
+    Object {
+      "dispatch": [Function],
+      "getState": [Function],
+      "replaceReducer": [Function],
+      "subscribe": [Function],
+      Symbol(observable): [Function],
+    }
+  }
+>
+  <I18nProvider
+    catalogs={
+      Object {
+        "en": Object {
+          "languageData": Object {
+            "plurals": [Function],
+          },
+          "messages": Object {
+            "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
+          },
+        },
+      }
+    }
+    defaultRender={null}
+    language="en"
+  >
+    <ThemeProvider
+      theme={
+        Object {
+          "colors": Object {
+            "accent": "#3277a8",
+            "buttonText": "#ffffff",
+            "card": "#f2f2f2",
+            "error": "#a32121",
+            "neutral": "#ffffff",
+            "text": "#1a242d",
+          },
+          "font": Object {
+            "primary": "Helvetica, sans-serif",
+          },
+          "shadows": Object {
+            "z1": "0px 1px 3px 0px rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2)",
+            "z2": "0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16)",
+          },
+        }
+      }
+    >
+      <BlockList>
+        <main>
+          <h1>
+            <WithI18n
+              id="EOSIO Blockchain Viewer"
+            >
+              <I18n
+                update={true}
+                withHash={true}
+              >
+                <Trans
+                  i18n={
+                    I18n {
+                      "_activeLanguageData": Object {
+                        "plurals": [Function],
+                      },
+                      "_activeMessages": Object {
+                        "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
+                      },
+                      "_catalogs": Object {
+                        "en": Object {
+                          "languageData": Object {
+                            "plurals": [Function],
+                          },
+                          "messages": Object {
+                            "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
+                          },
+                        },
+                      },
+                      "_dev": Object {
+                        "compile": [Function],
+                        "loadLanguageData": [Function],
+                      },
+                      "_language": "en",
+                      "_locales": undefined,
+                      "_missing": undefined,
+                      "plural": [Function],
+                      "select": [Function],
+                      "selectOrdinal": [Function],
+                      "t": [Function],
+                    }
+                  }
+                  i18nHash={null}
+                  id="EOSIO Blockchain Viewer"
+                >
+                  <Render
+                    value="EOSIO Blockchain Viewer"
+                  >
+                    EOSIO Blockchain Viewer
+                  </Render>
+                </Trans>
+              </I18n>
+            </WithI18n>
+          </h1>
+          <styled.button
+            onClick={[Function]}
+          >
+            <StyledComponent
+              forwardedComponent={
+                Object {
+                  "$$typeof": Symbol(react.forward_ref),
+                  "attrs": Array [],
+                  "componentStyle": ComponentStyle {
+                    "componentId": "sc-bdVaJa",
+                    "isStatic": false,
+                    "lastClassName": "gDgQlX",
+                    "rules": Array [
+                      "
+	padding: .5em 1em;
+	border-radius: 6px;
+	border: 0;
+
+	box-shadow: ",
+                      [Function],
+                      ";
+
+	background-color: ",
+                      [Function],
+                      ";
+	color: ",
+                      [Function],
+                      ";
+
+	transition: 
+		background-color .3s ease-in-out,
+		box-shadow .3s ease-in-out,
+		transform .2s linear;
+
+	&:hover {
+		box-shadow: ",
+                      [Function],
+                      ";
+		background-color: ",
+                      [Function],
+                      ";
+		transform: translateY(-2px);
+	}
+",
+                    ],
+                  },
+                  "displayName": "styled.button",
+                  "foldedComponentIds": Array [],
+                  "render": [Function],
+                  "styledComponentId": "sc-bdVaJa",
+                  "target": "button",
+                  "toString": [Function],
+                  "usesTheme": true,
+                  "warnTooManyClasses": [Function],
+                  "withComponent": [Function],
+                }
+              }
+              forwardedRef={null}
+              onClick={[Function]}
+            >
+              <button
+                className="sc-bdVaJa gDgQlX"
+                onClick={[Function]}
+              >
+                <WithI18n
+                  id="Get 10 most recent blocks"
+                >
+                  <I18n
+                    update={true}
+                    withHash={true}
+                  >
+                    <Trans
+                      i18n={
+                        I18n {
+                          "_activeLanguageData": Object {
+                            "plurals": [Function],
+                          },
+                          "_activeMessages": Object {
+                            "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
+                          },
+                          "_catalogs": Object {
+                            "en": Object {
+                              "languageData": Object {
+                                "plurals": [Function],
+                              },
+                              "messages": Object {
+                                "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
+                              },
+                            },
+                          },
+                          "_dev": Object {
+                            "compile": [Function],
+                            "loadLanguageData": [Function],
+                          },
+                          "_language": "en",
+                          "_locales": undefined,
+                          "_missing": undefined,
+                          "plural": [Function],
+                          "select": [Function],
+                          "selectOrdinal": [Function],
+                          "t": [Function],
+                        }
+                      }
+                      i18nHash={null}
+                      id="Get 10 most recent blocks"
+                    >
+                      <Render
+                        value="Get 10 most recent blocks"
+                      >
+                        Get 10 most recent blocks
+                      </Render>
+                    </Trans>
+                  </I18n>
+                </WithI18n>
+              </button>
+            </StyledComponent>
+          </styled.button>
+          <Loader
+            isVisible={false}
+          />
+          <I18n
+            update={true}
+            withHash={true}
+          >
+            <Error
+              isVisible={false}
+              message="There was an error retrieving new blocks to display."
+            />
+          </I18n>
+          <List>
+            <styled.ul>
+              <StyledComponent
+                forwardedComponent={
+                  Object {
+                    "$$typeof": Symbol(react.forward_ref),
+                    "attrs": Array [],
+                    "componentStyle": ComponentStyle {
+                      "componentId": "sc-dnqmqq",
+                      "isStatic": false,
+                      "lastClassName": "iruCdV",
+                      "rules": Array [
+                        "
+	list-style: none;
+	padding: 0;
+",
+                      ],
+                    },
+                    "displayName": "styled.ul",
+                    "foldedComponentIds": Array [],
+                    "render": [Function],
+                    "styledComponentId": "sc-dnqmqq",
+                    "target": "ul",
+                    "toString": [Function],
+                    "usesTheme": false,
+                    "warnTooManyClasses": [Function],
+                    "withComponent": [Function],
+                  }
+                }
+                forwardedRef={null}
+              >
+                <ul
+                  className="sc-dnqmqq iruCdV"
+                />
+              </StyledComponent>
+            </styled.ul>
+          </List>
+        </main>
+      </BlockList>
+    </ThemeProvider>
+  </I18nProvider>
+</Provider>
+`;

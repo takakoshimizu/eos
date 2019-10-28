@@ -30,7 +30,7 @@
     "redux-promise": "^0.6.0",
     "shader": "^1.0.0",
     "styled-components": "^4.4.0",
-    "typescript": "^3.7.0-beta"
+    "typescript": "^3.6.4"
   },
   "devDependencies": {
     "@babel/cli": "^7.6.4",
@@ -42,6 +42,7 @@
     "@lingui/babel-preset-react": "^2.8.3",
     "@lingui/cli": "^2.8.3",
     "@lingui/macro": "^2.8.3",
+    "@types/enzyme": "^3.10.3",
     "@types/jest": "^24.0.19",
     "@types/lingui__macro": "^2.7.3",
     "@types/lingui__react": "^2.8.1",
@@ -55,9 +56,13 @@
     "@typescript-eslint/eslint-plugin": "^2.4.0",
     "@typescript-eslint/parser": "^2.4.0",
     "babel-core": "7.0.0-bridge.0",
+    "babel-jest": "^24.9.0",
     "babel-loader": "^8.0.6",
     "babel-plugin-macros": "^2.6.1",
     "env-cmd": "^10.0.1",
+    "enzyme": "^3.10.0",
+    "enzyme-adapter-react-16": "^1.15.1",
+    "enzyme-to-json": "^3.4.3",
     "eslint": "^6.5.1",
     "eslint-config-prettier": "^6.4.0",
     "eslint-plugin-jest": "^22.19.0",
@@ -66,7 +71,6 @@
     "jest": "^24.9.0",
     "prettier": "^1.18.2",
     "react-hot-loader": "^4.12.15",
-    "ts-jest": "^24.1.0",
     "ts-loader": "^6.2.0",
     "webpack": "^4.41.2",
     "webpack-cli": "^3.3.9",

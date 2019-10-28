@@ -5,7 +5,7 @@ import promiseMiddleware from 'redux-promise';
 import blocks from './services/blocks/reducer';
 import fetchStatus from './services/fetch-status/reducer';
 
-const reducers = combineReducers({
+export const reducers = combineReducers({
 	blocks,
 	fetchStatus
 });

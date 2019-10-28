@@ -1,6 +1,5 @@
 module.exports = {
 	moduleFileExtensions: ['ts', 'tsx', 'js', 'jsx'],
-	transform: {
-		'\\.(ts|tsx)$': 'ts-jest'
-	}
+	snapshotSerializers: ['enzyme-to-json/serializer'],
+	setupFiles: ['./enzyme.config.js']
 };
