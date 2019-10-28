@@ -28,7 +28,7 @@ jobs:
       - run: yarn compile
       - run: yarn build
 
-      - save_cache
+      - save_cache:
           paths:
             - node_modules
           key: v1-dependencies-{{ checksum "package.json" }}
