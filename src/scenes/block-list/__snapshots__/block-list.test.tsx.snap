@@ -1,25 +1,25 @@
-// Jest Snapshot v1, https://goo.gl/fbAQLP
+// Jest Snapshot v1, https://jestjs.io/docs/snapshot-testing
 
 exports[`Block list should render 1`] = `
 <Provider
   store={
-    Object {
+    {
+      "@@observable": [Function],
       "dispatch": [Function],
       "getState": [Function],
       "replaceReducer": [Function],
       "subscribe": [Function],
-      Symbol(observable): [Function],
     }
   }
 >
   <I18nProvider
     catalogs={
-      Object {
-        "en": Object {
-          "languageData": Object {
+      {
+        "en": {
+          "languageData": {
             "plurals": [Function],
           },
-          "messages": Object {
+          "messages": {
             "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
           },
         },
@@ -30,8 +30,8 @@ exports[`Block list should render 1`] = `
   >
     <ThemeProvider
       theme={
-        Object {
-          "colors": Object {
+        {
+          "colors": {
             "accent": "#3277a8",
             "buttonText": "#ffffff",
             "card": "#f2f2f2",
@@ -39,10 +39,10 @@ exports[`Block list should render 1`] = `
             "neutral": "#ffffff",
             "text": "#1a242d",
           },
-          "font": Object {
+          "font": {
             "primary": "Helvetica, sans-serif",
           },
-          "shadows": Object {
+          "shadows": {
             "z1": "0px 1px 3px 0px rgba(0,0,0,0.1), 0 1px 2px 0 rgba(0,0,0,0.2)",
             "z2": "0 3px 6px 0 rgba(0,0,0,0.23), 0 3px 6px 0 rgba(0,0,0,0.16)",
           },
@@ -62,23 +62,23 @@ exports[`Block list should render 1`] = `
                 <Trans
                   i18n={
                     I18n {
-                      "_activeLanguageData": Object {
+                      "_activeLanguageData": {
                         "plurals": [Function],
                       },
-                      "_activeMessages": Object {
+                      "_activeMessages": {
                         "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
                       },
-                      "_catalogs": Object {
-                        "en": Object {
-                          "languageData": Object {
+                      "_catalogs": {
+                        "en": {
+                          "languageData": {
                             "plurals": [Function],
                           },
-                          "messages": Object {
+                          "messages": {
                             "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
                           },
                         },
                       },
-                      "_dev": Object {
+                      "_dev": {
                         "compile": [Function],
                         "loadLanguageData": [Function],
                       },
@@ -108,14 +108,14 @@ exports[`Block list should render 1`] = `
           >
             <StyledComponent
               forwardedComponent={
-                Object {
+                {
                   "$$typeof": Symbol(react.forward_ref),
-                  "attrs": Array [],
+                  "attrs": [],
                   "componentStyle": ComponentStyle {
                     "componentId": "sc-bdVaJa",
                     "isStatic": false,
                     "lastClassName": "gDgQlX",
-                    "rules": Array [
+                    "rules": [
                       "
 	padding: .5em 1em;
 	border-radius: 6px;
@@ -150,12 +150,11 @@ exports[`Block list should render 1`] = `
                     ],
                   },
                   "displayName": "styled.button",
-                  "foldedComponentIds": Array [],
+                  "foldedComponentIds": [],
                   "render": [Function],
                   "styledComponentId": "sc-bdVaJa",
                   "target": "button",
                   "toString": [Function],
-                  "usesTheme": true,
                   "warnTooManyClasses": [Function],
                   "withComponent": [Function],
                 }
@@ -177,23 +176,23 @@ exports[`Block list should render 1`] = `
                     <Trans
                       i18n={
                         I18n {
-                          "_activeLanguageData": Object {
+                          "_activeLanguageData": {
                             "plurals": [Function],
                           },
-                          "_activeMessages": Object {
+                          "_activeMessages": {
                             "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
                           },
-                          "_catalogs": Object {
-                            "en": Object {
-                              "languageData": Object {
+                          "_catalogs": {
+                            "en": {
+                              "languageData": {
                                 "plurals": [Function],
                               },
-                              "messages": Object {
+                              "messages": {
                                 "EOSIO Blockchain Viewer": "EOSIO Blockchain Viewer",
                               },
                             },
                           },
-                          "_dev": Object {
+                          "_dev": {
                             "compile": [Function],
                             "loadLanguageData": [Function],
                           },
@@ -236,14 +235,14 @@ exports[`Block list should render 1`] = `
             <styled.ul>
               <StyledComponent
                 forwardedComponent={
-                  Object {
+                  {
                     "$$typeof": Symbol(react.forward_ref),
-                    "attrs": Array [],
+                    "attrs": [],
                     "componentStyle": ComponentStyle {
                       "componentId": "sc-dnqmqq",
                       "isStatic": false,
                       "lastClassName": "iruCdV",
-                      "rules": Array [
+                      "rules": [
                         "
 	list-style: none;
 	padding: 0;
@@ -251,12 +250,11 @@ exports[`Block list should render 1`] = `
                       ],
                     },
                     "displayName": "styled.ul",
-                    "foldedComponentIds": Array [],
+                    "foldedComponentIds": [],
                     "render": [Function],
                     "styledComponentId": "sc-dnqmqq",
                     "target": "ul",
                     "toString": [Function],
-                    "usesTheme": false,
                     "warnTooManyClasses": [Function],
                     "withComponent": [Function],
                   }
